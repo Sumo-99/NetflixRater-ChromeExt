@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Netflix-Rater",
+  "description": "Content rater for Netflix",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "https://ajax.googleapis.com/",
+    "https://www.netflix.com/browse"
+  ]
+}
